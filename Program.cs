@@ -1,11 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using StoreApi.Models;
-
+using StoreApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
+// Add services to the container.
+builder.Services.Configure<StoreDatabaseSettings>(
+builder.Configuration.GetSection("StoreDatabase"));
+
+builder.Services.AddSingleton<ProductsService>();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<StoreContext>(opt =>
     opt.UseInMemoryDatabase("Store"));

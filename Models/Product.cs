@@ -1,10 +1,18 @@
-namespace StoreApi.Models
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+namespace StoreApi.Models;
+
+public class Product
 {
-    public class Product
-    {
-        public long Id { get; set; }
-        public string? Name { get; set; }
-        public float? Price { get; set; }
-        public string? Category {get;set;}
-    }
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? Id { get; set; }
+
+    [BsonElement("name")]
+    public string productName { get; set; } = null!;
+
+    public float price { get; set; }
+
+    public string category { get; set; } = null!;
+
 }
