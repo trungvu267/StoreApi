@@ -3,7 +3,8 @@ using StoreApi.Models;
 using StoreApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+// Add scoped service in Program.cs
+builder.Services.AddScoped<UsersService>();
 
 // Add services to the container.
 builder.Services.Configure<StoreDatabaseSettings>(
