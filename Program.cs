@@ -2,7 +2,19 @@ using Microsoft.EntityFrameworkCore;
 using StoreApi.Models;
 using StoreApi.Services;
 
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy  =>
+                      {
+                          policy.WithOrigins("http://localhost:8000",
+                                              "http://www.contoso.com");
+                      });
+});
 // Add scoped service in Program.cs
 builder.Services.AddScoped<UsersService>();
 
@@ -30,6 +42,8 @@ if (builder.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 
