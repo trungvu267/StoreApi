@@ -30,7 +30,7 @@ public class UsersService
     public async Task<User?> GetAsync(string id) =>
         await _usersCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
     public async Task<User?> GetUser(string name,string password) =>
-        await _usersCollection.Find(x => x.userName == name & x.password == password ).FirstOrDefaultAsync();
+        await _usersCollection.Find(x => x.UserName == name & x.Password == password ).FirstOrDefaultAsync();
     public async Task CreateAsync(User newUser) =>
         await _usersCollection.InsertOneAsync(newUser); 
 

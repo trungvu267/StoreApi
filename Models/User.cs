@@ -9,7 +9,9 @@ public class User
     public string? Id { get; set; }
 
     [BsonElement("name")]
-    public string userName { get; set; } = null!;
-    public string password { get; set; } = null!;
+    public string UserName { get; set; } = null!;
+    [BsonElement("password")]
+
+    public string Password { get; set; } = null!;
 
 }

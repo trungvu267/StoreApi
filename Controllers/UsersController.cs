@@ -18,10 +18,10 @@ public class UsersController : ControllerBase
         await _usersService.GetAsync();
 
     // [HttpGet("{id:length(24)}")]
-    [HttpGet("login")]
+    [HttpPost("login")]
     public async Task<ActionResult<User>> GetUser([FromBody]User userFromClient)
     {
-        var user = await _usersService.GetUser(userFromClient.userName, userFromClient.password);
+        var user = await _usersService.GetUser(userFromClient.UserName, userFromClient.Password);
 
         if (user is null)
         {
