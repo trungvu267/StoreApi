@@ -18,7 +18,19 @@ public class AddressesController : ControllerBase
         await _addressesService.GetAddresses();
 
     [HttpGet("{id:length(24)}")]
-    public async Task<List<Address>> Get(string id)=>
+    public async Task<ActionResult<Address>> GetAddress(string id)
+    {
+        var address = await _addressesService.GetAddresses(id);
+
+        if (address is null)
+        {
+            return NotFound();
+        }
+
+        return address;
+    }
+    [HttpGet("users/{id:length(24)}")]
+    public async Task<List<Address>> GetAddressesAsync(string id)=>
         await _addressesService.GetAddressesByUserId(id);
     [HttpPost]
     public async Task<IActionResult> Post(Address newAddress)
