@@ -13,7 +13,7 @@ public class Products
     {
         ProductId = productId;
         Quantity = quantity;
-    }
+    } 
 }
 
 
@@ -28,6 +28,9 @@ public class Cart
     [BsonRepresentation(BsonType.ObjectId)]
     [BsonElement("userId")]
     public string? UserId {get;set;}
+    [BsonRepresentation(BsonType.ObjectId)]
+    [BsonElement("addressId")]
+    public string? AddressId {get;set;}
     [BsonElement("products")]
     public Products[]? Products {get;set;}
 

@@ -8,8 +8,11 @@ namespace StoreApi.Models
         public StoreContext(DbContextOptions<StoreContext> options)
             : base(options)
         {
-        }
 
+        }
         public DbSet<Product> Products { get; set; } = null!;
+        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<Address> Addresses { get; set; } = null!;
+
     }
 }

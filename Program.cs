@@ -20,6 +20,7 @@ builder.Services.AddCors(options =>
 // Add scoped service in Program.cs
 builder.Services.AddScoped<UsersService>();
 builder.Services.AddScoped<CartsService>();
+builder.Services.AddScoped<AddressesService>();
 
 // Add services to the container.
 builder.Services.Configure<StoreDatabaseSettings>(
