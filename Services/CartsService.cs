@@ -26,6 +26,8 @@ public class CartsService
 
     public async Task<List<Cart>> GetCarts() =>
         await _cartsCollection.Find(_ => true).ToListAsync();
+    public async Task<List<Cart>> GetCartsByUserId(string id) =>
+        await _cartsCollection.Find(x => x.UserId == id).ToListAsync();
 
     public async Task<Cart?> GetCarts(string id) =>
         await _cartsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();

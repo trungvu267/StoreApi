@@ -29,7 +29,9 @@ public class CartsController : ControllerBase
 
         return product;
     }
-
+    [HttpGet("users/{id:length(24)}")]
+    public async Task<List<Cart>> GetAddressesAsync(string id)=>
+        await _cartsService.GetCartsByUserId(id);
     [HttpPost]
     public async Task<IActionResult> Post(Cart newCart)
     {

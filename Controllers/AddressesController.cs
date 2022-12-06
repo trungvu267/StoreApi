@@ -41,7 +41,7 @@ public class AddressesController : ControllerBase
     }
 
     [HttpPut("{id:length(24)}")]
-    public async Task<IActionResult> Update(string id, Address updatedAddress)
+    public async Task<IActionResult> Update(string id, [FromBody]Address updatedAddress)
     {
         var address = await _addressesService.GetAddresses(id);
 
