@@ -39,4 +39,7 @@ public class UsersService
 
     // public async Task RemoveAsync(string id) =>
     //     await _usersCollection.DeleteOneAsync(x => x.Id == id);
+    public async Task Register(User newUser) =>
+        Console.Write("Hello guy !");
+    
 }

@@ -13,6 +13,7 @@ namespace StoreApi.Models
         public DbSet<Product> Products { get; set; } = null!;
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Address> Addresses { get; set; } = null!;
+        public DbSet<OnlineOrder> OnlineOrders { get; set; } = null!;
 
     }
 }

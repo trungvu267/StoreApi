@@ -49,7 +49,7 @@ public class UsersController : ControllerBase
 
         return CreatedAtAction(nameof(Get), new { id = newUser.Id }, newUser);
     }
-
+    
     [HttpPut("{id:length(24)}")]
     public async Task<IActionResult> Update(string id, User updatedUser)
     {

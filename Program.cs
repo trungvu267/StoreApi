@@ -21,6 +21,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<UsersService>();
 builder.Services.AddScoped<CartsService>();
 builder.Services.AddScoped<AddressesService>();
+builder.Services.AddScoped<OnlineOrdersService>();
 
 // Add services to the container.
 builder.Services.Configure<StoreDatabaseSettings>(

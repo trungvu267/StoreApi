@@ -8,4 +8,5 @@ public class StoreDatabaseSettings
     public string UsersCollectionName { get; set; } = null!;
     public string CartsCollectionName { get; set; } = null!;
     public string AddressesCollectionName { get; set; } = null!;
+    public string OnlineOrdersCollectionName { get; set; } = null!;
 }

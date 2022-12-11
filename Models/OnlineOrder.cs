@@ -2,22 +2,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 namespace StoreApi.Models;
 
-public class Products
-{
-    [BsonRepresentation(BsonType.ObjectId)]
-    [BsonElement("productId")]
-    public string ProductId { get; set; }
-    [BsonElement("quantity")]
-    public int Quantity { get; set; }
-    public Products(string productId, int quantity)
-    {
-        ProductId = productId;
-        Quantity = quantity;
-    } 
-}
-
-
-public class Cart
+public class OnlineOrder
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
